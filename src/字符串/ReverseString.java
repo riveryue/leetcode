@@ -1,5 +1,8 @@
 package 字符串;
 
+/**
+ * 反转字符串
+ */
 public class ReverseString {
 
     public static char[] solution1(char[] s) {
