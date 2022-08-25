@@ -40,8 +40,18 @@ public class UniqueChar {
         return -1;
     }
 
+    public int firstUniqueChar(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         System.out.println(new UniqueChar().firstUniqChar("aabc"));
         System.out.println(new UniqueChar().findFirstUniChar("aabc"));
+        System.out.println(new UniqueChar().firstUniqueChar("aabc"));
     }
 }
