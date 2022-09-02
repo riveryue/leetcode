@@ -34,9 +34,27 @@ public class Strstr {
         return -1;
     }
 
+    public static int strStr(String haystack, String needle) {
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            boolean eq  = true;
+            for (int j = 0; j < needle.length(); j++) {
+                char c1 = haystack.charAt(i + j);
+                char c2 = needle.charAt(j);
+                if (c1 != c2) {
+                    eq = false;
+                    break;
+                }
+            }
+            if (eq) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
-        System.out.println(strStr1("leetcode", "leeto"));
-        System.out.println(strStr2("mississippi", "issip"));
-        System.out.println(strStr2("mississippi", "pi"));
+        System.out.println(strStr("leetcode", "leeto"));
+        System.out.println(strStr("mississippi", "issip"));
+        System.out.println(strStr("mississippi", "pi"));
     }
 }
