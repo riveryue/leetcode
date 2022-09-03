@@ -24,10 +24,8 @@ public class Strstr {
     }
 
     public static int strStr2(String haystack, String needle) {
-        int limit = haystack.length() - needle.length();
-        for (int i = 0; i <= limit; i++) {
-            String substring = haystack.substring(i, i + needle.length());
-            if (substring.equals(needle)) {
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            if (haystack.substring(i, i + needle.length()).equals(needle)) {
                 return i;
             }
         }
