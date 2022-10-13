@@ -1,15 +1,5 @@
 package 链表;
 
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
-
 public class DelNode {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1);
