@@ -15,9 +15,9 @@ public class MaxCommonPre {
     public static void main(String[] args) {
         System.out.println("okn".indexOf("l"));
         System.out.println("okn".indexOf("oki"));
-        String[] strs = {"flower", "flower", "flower"};
+        String[] strs = {"flowera", "flower", "flower"};
         System.out.println(longestCommonPrefix(strs));
-        String [] str = {"dog","racecar","car"};
+        String [] str = {"dog","radocecar","cador"};
         System.out.println(longestCommonPrefix(str));
     }
 }
