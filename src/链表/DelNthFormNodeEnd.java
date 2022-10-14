@@ -18,8 +18,38 @@ public class DelNthFormNodeEnd {
         return head;
     }
 
+    public ListNode removeNthNodeFromEnd(ListNode head, int n) {
+        int length = length(head);
+        ListNode previous = head;
+        int last = length - n;
+        if (last == 0) {
+            return previous.next;
+        }
+        for (int i = 0; i < last - 1; i++) {
+            previous = previous.next;
+        }
+        if (previous.next != null) {
+            previous.next = previous.next.next;
+        }
+        return head;
+    }
+
+    private int length(ListNode listNode) {
+        int length = 0;
+        while (listNode != null) {
+            length++;
+            listNode = listNode.next;
+        }
+        return length;
+    }
+
     public static void main(String[] args) {
-        ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
-        System.out.println(new DelNthFormNodeEnd().removeNthFromEnd(listNode, 2));
+        ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
+        System.out.println(new DelNthFormNodeEnd().removeNthFromEnd(listNode1, 2));
+        ListNode listNode2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
+        System.out.println(new DelNthFormNodeEnd().removeNthNodeFromEnd(listNode2, 2));
+        ListNode listNode3 = new ListNode(1, null);
+        System.out.println(new DelNthFormNodeEnd().removeNthNodeFromEnd(listNode3, 2));
+
     }
 }
