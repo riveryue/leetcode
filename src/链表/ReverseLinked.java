@@ -36,9 +36,7 @@ public class ReverseLinked {
         ListNode res = new ListNode(nodes.get(nodes.size() - 1).val);
         ListNode node = res;
         for (int i = nodes.size() - 2; i >= 0; i--) {
-            ListNode temp = new ListNode(nodes.get(i).val);
-            System.out.println("1 " + temp);
-            res.next = temp;
+            res.next = new ListNode(nodes.get(i).val);
             res = res.next;
         }
         res.next = null;
