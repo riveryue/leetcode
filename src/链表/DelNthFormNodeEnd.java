@@ -28,9 +28,7 @@ public class DelNthFormNodeEnd {
         for (int i = 0; i < last - 1; i++) {
             previous = previous.next;
         }
-        if (previous.next != null) {
-            previous.next = previous.next.next;
-        }
+        previous.next = previous.next.next;
         return head;
     }
 
@@ -43,12 +41,42 @@ public class DelNthFormNodeEnd {
         return length;
     }
 
+    /**
+     * 递归计算链表长度
+     *
+     * @param listNode
+     * @return
+     */
+    private int len(ListNode listNode) {
+        if (listNode == null) {
+            return 0;
+        }
+        return len(listNode.next) + 1;
+    }
+
+    public ListNode removeNthFromEndByDummyHead(ListNode node, int n) {
+        ListNode dummyNode = new ListNode(0, node);
+        ListNode slow = dummyNode;
+        ListNode fast = node;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+        }
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummyNode.next;
+    }
+
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
+        System.out.println(new DelNthFormNodeEnd().removeNthFromEndByDummyHead(listNode1, 2));
+        System.out.println(new DelNthFormNodeEnd().len(listNode1));
         System.out.println(new DelNthFormNodeEnd().removeNthFromEnd(listNode1, 2));
         ListNode listNode2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
         System.out.println(new DelNthFormNodeEnd().removeNthNodeFromEnd(listNode2, 2));
-        ListNode listNode3 = new ListNode(1, null);
+        ListNode listNode3 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, null))));
         System.out.println(new DelNthFormNodeEnd().removeNthNodeFromEnd(listNode3, 2));
 
     }
