@@ -55,8 +55,8 @@ public class DelNthFormNodeEnd {
     }
 
     public ListNode removeNthFromEndByDummyHead(ListNode node, int n) {
-        ListNode dummyNode = new ListNode(0, node);
-        ListNode slow = dummyNode;
+        ListNode hummyHead = new ListNode(0, node);
+        ListNode slow = hummyHead;
         ListNode fast = node;
         for (int i = 0; i < n; i++) {
             fast = fast.next;
@@ -66,7 +66,7 @@ public class DelNthFormNodeEnd {
             slow = slow.next;
         }
         slow.next = slow.next.next;
-        return dummyNode.next;
+        return hummyHead.next;
     }
 
     public static void main(String[] args) {
