@@ -6,19 +6,6 @@ import java.util.Stack;
 
 public class ReverseLinked {
     public ListNode reverseList(ListNode head) {
-//        List<ListNode> nodes = new ArrayList<>();
-//        while (head != null) {
-//            nodes.add(new ListNode(head.val));
-//            head = head.next;
-//        }
-//        ListNode res = new ListNode(nodes.get(nodes.size() - 1).val);
-//        for (int i = nodes.size() - 2; i >= 0; i--) {
-//            ListNode temp = new ListNode(nodes.get(i).val);
-//            System.out.println("1 " + temp);
-//            res.next = temp;
-//            res = res.next;
-//        }
-//        return res;
         Stack<ListNode> listNodes = new Stack<>();
         while (head != null) {
             listNodes.push(head);
@@ -37,8 +24,31 @@ public class ReverseLinked {
         return dummy;
     }
 
+    public ListNode reverseListNode(ListNode head) {
+        List<ListNode> nodes = new ArrayList<>();
+        while (head != null) {
+            nodes.add(new ListNode(head.val));
+            head = head.next;
+        }
+        if (nodes.isEmpty()) {
+            return null;
+        }
+        ListNode res = new ListNode(nodes.get(nodes.size() - 1).val);
+        ListNode node = res;
+        for (int i = nodes.size() - 2; i >= 0; i--) {
+            ListNode temp = new ListNode(nodes.get(i).val);
+            System.out.println("1 " + temp);
+            res.next = temp;
+            res = res.next;
+        }
+        res.next = null;
+        return node;
+    }
+
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         System.out.println(new ReverseLinked().reverseList(listNode));
+        ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        System.out.println(new ReverseLinked().reverseList(listNode1));
     }
 }
