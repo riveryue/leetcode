@@ -60,6 +60,6 @@ public class ReverseLinked {
         ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         System.out.println(new ReverseLinked().reverseListNode(listNode1));
         ListNode listNode2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-        System.out.println(new ReverseLinked().reverseListNode(listNode2));
+        System.out.println(new ReverseLinked().reList(listNode2));
     }
 }
