@@ -43,10 +43,23 @@ public class ReverseLinked {
         return node;
     }
 
+    public ListNode reList(ListNode head) {
+        ListNode dummyHead = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = dummyHead;
+            dummyHead = head;
+            head = next;
+        }
+        return dummyHead;
+    }
+
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
         System.out.println(new ReverseLinked().reverseList(listNode));
         ListNode listNode1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
-        System.out.println(new ReverseLinked().reverseList(listNode1));
+        System.out.println(new ReverseLinked().reverseListNode(listNode1));
+        ListNode listNode2 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        System.out.println(new ReverseLinked().reverseListNode(listNode2));
     }
 }
