@@ -1,4 +1,4 @@
-package 字符串;
+package string;
 
 /**
  * 字符串中的第一个唯一字符

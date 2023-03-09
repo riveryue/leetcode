@@ -1,6 +1,4 @@
-package 字符串;
-
-import java.util.Locale;
+package string;
 
 public class Palindrome {
 

@@ -1,4 +1,4 @@
-package 链表;
+package linked;
 
 public class MergeLinked {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
