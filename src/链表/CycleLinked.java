@@ -17,6 +17,12 @@ public class CycleLinked {
         return false;
     }
 
+    /**
+     * 链表若有环 快慢指针就一定会进入环内 也一定会相遇
+     *
+     * @param head
+     * @return
+     */
     public boolean hasCycleByFastSLow(ListNode head) {
         if (head == null) {
             return false;
