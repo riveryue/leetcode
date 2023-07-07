@@ -18,16 +18,9 @@ public class ListNode {
 
     @Override
     public String toString() {
-
-        StringBuffer res = new StringBuffer();
-        res.append(val + " > ");
-        while (next != null) {
-            res.append(next.val);
-            if (next.next != null) {
-                res.append(" > ");
-            }
-            next = next.next;
-        }
-        return res.toString();
+        return "ListNode{" +
+                "val=" + val +
+                ", next=" + next +
+                '}';
     }
 }
